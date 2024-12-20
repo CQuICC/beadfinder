@@ -34,3 +34,32 @@ for i in range(1, im_ct):
   img[img < 172] = 0
 
   C.imwrite(f'./{out_d}/{i:03d}.png', img)
+
+# finding the beat frequecy by checking how long it takes
+# for the image to become same as the first image
+
+B_POS = (148, 500)
+OFFSET = 5
+B_SIZ = 25
+
+x0, y0 = B_POS[0]-B_SIZ, B_POS[1]-B_SIZ
+x1, y1 = B_POS[0]+B_SIZ, B_POS[1]+B_SIZ
+
+BASE = C.imread(f'./in_dir/001.png', C.IMREAD_GRAYSCALE)
+BASE = BASE[x0:x1, y0:y1]
+
+diffs = []
+for i in range(OFFSET, min(100, im_ct)):
+  # read image
+  IMG = C.imread(f'./in_dir/{i:03d}.png', C.IMREAD_GRAYSCALE)
+  box_img = IMG[x0:x1, y0:y1]
+
+  # get difference between box and image
+  diff = C.absdiff(BASE, box_img)
+  diff = np.sum(diff)/(B_SIZ*2)**2
+
+  diffs.append(diff)
+
+# argmin of diffs
+min_diff = np.argmin(diffs) + OFFSET
+print(f"Beat frequency: {min_diff} frames")

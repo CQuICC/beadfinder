@@ -18,3 +18,8 @@ Then use the max_y and circle distance to use later with beat frequency.
 fmpeg -i ./test.mp4 './in_dir/%03d.png'
 python3 scripts/extract.py in_dir out_dir
 ```
+
+## Todos
+- Add tunable param to convert pixels &rarr; µm
+- Do for all 7 videos $(r, \theta)$
+- Make PPT

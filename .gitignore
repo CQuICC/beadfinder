@@ -1,2 +1,5 @@
 .DS_Store
 **/__pycache__/
+opencv/
+in_dir/
+out_dir/

@@ -13,7 +13,13 @@ def to_ranges(lst):
   return ranges
 
 def count_im(dir):
-  return len([f for f in L(dir) if f.endswith('.png')])
+  ct = [f for f in L(dir) if f.endswith('.png')]
+  if '0.png' in ct:
+    ct.remove('0.png')
+  if '000.png' in ct:
+    ct.remove('000.png')
+
+  return len(ct)
 
 def xy(B_POS, B_SIZ):
   x0, y0 = B_POS[0]-B_SIZ, B_POS[1]-B_SIZ
@@ -21,11 +27,13 @@ def xy(B_POS, B_SIZ):
 
   return x0, y0, x1, y1
 
-def Circ(img):
+def Circ(img, R):
+  rme, rpe = round(R * 0.9), round(R * 1.1)
+
   detected = np.uint16(np.around(C.HoughCircles(
     img, method=C.HOUGH_GRADIENT, dp=1,
-    minDist=img.shape[0] / 8, param1=100, param2=10,
-    minRadius=1, maxRadius=10
+    minDist=1, param1=100, param2=10,
+    minRadius=rme, maxRadius=rpe
   )))[0][0]
 
   x, y, r = detected
@@ -33,6 +41,6 @@ def Circ(img):
 
   img2 = img.copy()
   img2 = 255 - img2 * C.circle(np.zeros_like(img2), (x, y), r, 255, -1)
-  img2 = img2[x-r:x+r, y-r:y+r]
+  img2 = img2[y-r:y+r, x-r:x+r]
 
   return img2

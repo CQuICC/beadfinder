@@ -23,3 +23,12 @@ python3 scripts/extract.py in_dir out_dir
 - Add tunable param to convert pixels &rarr; µm
 - Do for all 7 videos $(r, \theta)$
 - Make PPT
+
+## Data
+
+| Video | Model R | Drop Dist | Bead R | Bead $\theta$ |
+| --- | --- | --- | --- | --- |
+| A.mp4 | 10px | 2.0R | 1.5px | 135° |
+| B.mp4 | 10px | 2.0R | 5.1px | 191° |
+| C.mp4 |  9px | 2.2R | 5.7px | 225° |
+| D.mp4 |  7px | 1.7R | 1.5px | 135° |

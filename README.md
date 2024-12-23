@@ -32,3 +32,5 @@ python3 scripts/extract.py in_dir out_dir
 | B.mp4 | 10px | 2.0R | 5.1px | 191° |
 | C.mp4 |  9px | 2.2R | 5.7px | 225° |
 | D.mp4 |  7px | 1.7R | 1.5px | 135° |
+| F.mp4 |  7px | 1.7R | 3.0px | 180° |
+| G.mp4 |  7px | 2.6R | 4.0px | 180° |

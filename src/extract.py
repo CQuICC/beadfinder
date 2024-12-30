@@ -73,4 +73,5 @@ print(f"Beat frequency: {period} frames")
 
 with open(f'./data.txt', 'w') as f:
   data['f'] = str(period)
+  data['ct'] = str(im_ct)
   dump(data, f)

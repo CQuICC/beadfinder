@@ -5,3 +5,5 @@ in_dir/
 out_dir/
 report.tex
 data.txt
+data/*
+frame.png

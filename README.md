@@ -26,11 +26,14 @@ python3 scripts/extract.py in_dir out_dir
 
 ## Data
 
-| Video | Model R | Drop Dist | Bead R | Bead $\theta$ |
-| --- | --- | --- | --- | --- |
-| A.mp4 | 10px | 2.0R | 1.5px | 135° |
-| B.mp4 | 10px | 2.0R | 5.1px | 191° |
-| C.mp4 |  9px | 2.2R | 5.7px | 225° |
-| D.mp4 |  7px | 1.7R | 1.5px | 135° |
-| F.mp4 |  7px | 1.7R | 3.0px | 180° |
-| G.mp4 |  7px | 2.6R | 4.0px | 180° |
+| Video    | Modal R | I-Drop Dist | Bead R | Bead $\theta$ |
+|----------|---------|-------------|--------|---------------|
+| 1.0.mp4  | 14px    | 1.3R        | 13px   | 22.6°         |
+| 2.0.mp4  | 12px    | 2.0R        | 2.0px  | 270.0°        |
+| 2.67.mp4 | 11px    | 4.0R        | 5.1px  | 281.3°        |
+| 3.33.mp4 | 10px    | 4.3R        | 5.4px  | 158.2°        |
+| 4.0.mp4  | 14px    | 4.6R        | 6.7px  | 153.4°        |
+| 5.33.mp4|8px | 3.8R | 3.6px | 236.3° |
+| 6.67.mp4|7px | 3.4R | 2.2px | 63.4° |
+
+Result for 2.67 has higher error, as the bead is not obvious to eye also.

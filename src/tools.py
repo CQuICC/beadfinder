@@ -3,6 +3,16 @@ from math import ceil
 import numpy as np
 import cv2 as C
 
+def ref_box(small=False):
+  if small:
+    B_POS = (155, 650)
+    B_SIZ = 15
+  else:
+    B_POS = (152, 650)
+    B_SIZ = 25
+
+  return xy(B_POS, B_SIZ)
+
 read = lambda path: C.imread(path, C.IMREAD_GRAYSCALE)
 hough = lambda img, **kwargs: np.uint16(np.around(C.HoughCircles(
   img, method=C.HOUGH_GRADIENT, dp=1, **kwargs

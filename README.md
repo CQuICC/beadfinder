@@ -36,4 +36,13 @@ python3 scripts/extract.py in_dir out_dir
 | 5.33.mp4|8px | 3.8R | 3.6px | 236.3° |
 | 6.67.mp4|7px | 3.4R | 2.2px | 63.4° |
 
+Radius,Theta,Bead Section,Droplet radius
+32.1,28.1,TL,51.8
+9.6,258.7,BC,45.4
+43.2,208.8,BR,42.6
+33.0,193.2,CR,38.7
+20.5,146.3,TR,35.3
+13.4,261.9,BC,32.0
+8.5,63.4,TL,26.7
+
 Result for 2.67 has higher error, as the bead is not obvious to eye also.

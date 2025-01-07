@@ -1,14 +1,16 @@
+from ast import literal_eval as make_tuple
 from itertools import groupby
+from json import load
 from math import ceil
 import numpy as np
 import cv2 as C
 
 def ref_box(small=False):
   if small:
-    B_POS = (155, 650)
-    B_SIZ = 15
+    B_POS = (175, 700)
+    B_SIZ = 10
   else:
-    B_POS = (152, 650)
+    B_POS = (175, 700)
     B_SIZ = 25
 
   return xy(B_POS, B_SIZ)
@@ -56,3 +58,18 @@ def Circ(img):
   img2 = img2[y-r:y+r, x-r:x+r]
 
   return img2
+
+def parseData():
+  data = load(open('data.txt', 'r'))
+
+  file = data['f']
+  sz = make_tuple(data['sz'])
+  Y_AXIS = int(data['Y'])
+  BEAD_FREQ = int(data['f'])
+  CT = int(data['ct']) + 1
+  BBOX = make_tuple(data['bsz'])
+
+  BEAD_SIZE = float(data['R'])
+  IBD = float(data['D'])
+
+  return file, sz, Y_AXIS, BEAD_FREQ, CT, BBOX, BEAD_SIZE, IBD

@@ -62,7 +62,8 @@ def Circ(img):
 def parseData():
   data = load(open('data.txt', 'r'))
 
-  file = data['f']
+  file = data['file']
+  index = int(data['index'])
   sz = make_tuple(data['sz'])
   Y_AXIS = int(data['Y'])
   BEAD_FREQ = int(data['f'])
@@ -72,4 +73,4 @@ def parseData():
   BEAD_SIZE = float(data['R'])
   IBD = float(data['D'])
 
-  return file, sz, Y_AXIS, BEAD_FREQ, CT, BBOX, BEAD_SIZE, IBD
+  return file, sz, Y_AXIS, BEAD_FREQ, CT, BBOX, BEAD_SIZE, IBD, index

@@ -3,7 +3,6 @@
     "data/": true,
     "frame.png": true,
     "data.txt": true,
-    "set_1.csv": true,
     "in_dir/": true,
     "out_dir/": true,
   }

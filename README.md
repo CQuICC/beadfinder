@@ -1,24 +1,15 @@
-## circle detection
+## 🪩 beadfinder
 
-## Conversions
-- Set 1: 100µm = 12px [0.036 * width of frame]
-- Set 2: 100µm = 14px [0.040 * width of frame]
+### Usage
+- **init.ipynb**: Pre-Calculate the basic features like shape of droplet, size, bounding box, etc.
+- **stats.ipynb**: Run the actual bead detection algorithm and also the droplet frequency finding.
+- **compare.ipynb**: Generate images of detected bead, reference frame, and a manual vs automatic detection comparison.
+- **results.ipynb**: Plot tol vs accuracy sweep
 
-## Usage
+### Results
+Set 1 Results
+<img src="assets/set1.png" alt="compare" width="400" />
 
-**Extract frames & boxes**:
-```bash
-fmpeg -i ./test.mp4 './in_dir/%03d.png'
-python3 scripts/extract.py in_dir out_dir
-```
 
-## Todos
-- Add tunable param to convert pixels &rarr; µm
-- Do for all 7 videos $(r, \theta)$
-- Make PPT
-
-## Set 1
-
-cx, cy = round(width * 0.485), round(height * 0.75)
-cx, cy = round(width * 0.485), round(height * 0.843)
-cx, cy = round(width * 0.43), round(height * 0.82)
+Set 2 Results
+<img src="assets/set2.png" alt="compare" width="400" />
